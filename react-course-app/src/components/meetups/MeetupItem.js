@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "./MeetupItem.module.css"
 import Card from "../ui/Card"
-console.log(classes)
+
 export default function MeetupItem(props) {
   return (
     <li className={classes.item}>

@@ -2,11 +2,25 @@ import React from "react"
 import { useRef } from "react"
 import Card from "../ui/Card"
 import classes from "./NewMeetupForm.module.css"
+
 export default function NewMeetupForm() {
+  // useRef is useful for storing client entered data, useState for dynimic rendering of data to client instead.
   const titleInputRef = useRef()
+  const imageInputRef = useRef()
+  const addressInputRef = useRef()
+  const descriptionInputRef = useRef()
+
   function submitHandler(e) {
     e.preventDefault()
-    const enteredTitle = titleInputRef.current.value
+
+    const meetupData = {
+      title: titleInputRef.current.value,
+      image: imageInputRef.current.value,
+      address: addressInputRef.current.value,
+      description: descriptionInputRef.current.value,
+    }
+
+    console.log(meetupData)
   }
   return (
     <Card>
@@ -28,6 +42,7 @@ export default function NewMeetupForm() {
             type="url"
             required
             id="image"
+            ref={imageInputRef}
           />
         </div>
         <div className={classes.control}>
@@ -36,6 +51,7 @@ export default function NewMeetupForm() {
             type="text"
             required
             id="address"
+            ref={addressInputRef}
           />
         </div>
         <div className={classes.control}>
@@ -43,7 +59,8 @@ export default function NewMeetupForm() {
           <textarea
             required
             id="description"
-            rows="5"></textarea>
+            rows="5"
+            ref={descriptionInputRef}></textarea>
           <div className={classes.actions}>
             <button>Add Meetup</button>
           </div>
