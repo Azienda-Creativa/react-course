@@ -1,6 +1,6 @@
 import React from "react"
-import classes from "./MeetupList.module.css"
 import MeetupItem from "./MeetupItem"
+import classes from "./MeetupList.module.css"
 
 export default function MeetupList(props) {
   return (
