@@ -3,8 +3,8 @@ import { useRef } from "react"
 import Card from "../ui/Card"
 import classes from "./NewMeetupForm.module.css"
 
-export default function NewMeetupForm() {
-  // useRef is useful for storing client entered data, useState for dynimic rendering of data to client instead.
+export default function NewMeetupForm(props) {
+  // useRef is useful for storing client entered data, useState for dynimic rendering data to client instead.
   const titleInputRef = useRef()
   const imageInputRef = useRef()
   const addressInputRef = useRef()
@@ -19,8 +19,7 @@ export default function NewMeetupForm() {
       address: addressInputRef.current.value,
       description: descriptionInputRef.current.value,
     }
-
-    console.log(meetupData)
+    props.addMeetup(meetupData)
   }
   return (
     <Card>
