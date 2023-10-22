@@ -1,0 +1,8 @@
+.topic {
+  padding: 8;
+  margin-top: 16;
+  display: flex;
+  justify-content: space-between;
+  align-items: items-start;
+  background-color: #e7e7e7;
+}
